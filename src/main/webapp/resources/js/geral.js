@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+		
 	$("#buttonSlide").click(function(){
 		
 		$("#slideMenu").animate({
@@ -30,7 +31,6 @@ $(document).ready(function(){
 function slideLogin(){
 		
 	$("#painelCentral").animate({
-	    opacity: 1,
 	    height: "toggle"
 	}, 500);
 	

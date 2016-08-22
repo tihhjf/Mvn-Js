@@ -7,7 +7,7 @@
 		<h:outputStylesheet library="css" name="estilos.css"/>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 	</h:head>
-	<h:body style="background-image: url('resources/img/fundo1.jpg');">
+	<h:body style="background-image: url('resources/img/fundos.jpg');" id="corpo">
 			<h:form id="form" prependId="false">
 				<p:growl id="message" showDetail="false" sticky="true"/>
 
@@ -21,6 +21,7 @@
 					</div>
 				
 					<div class="painel">
+					
 						<div class="col-lg-12">
 							<p:inputText id="nome" value="#{pessoaController.pessoa.login}" styleClass="form" placeholder="Login" required="true"/>
 						</div>
