@@ -1,0 +1,126 @@
+.form{
+	padding: 7px 15px !important;
+	width: inherit;
+}
+
+.m-t-2{
+	margin-top: 20px;
+}
+
+.painelCentral{
+	background-color: white;
+	width: 300px;
+	height: 300px;
+	border-radius: 5px;
+	display: none;
+	margin:0px auto;
+	margin-top: 200px;
+}
+
+.buttonLogar{
+	margin:0px auto;
+	margin-top: 300px;
+	padding: 20px 70px;
+	background-color: black;
+	width: 300px;
+	height: 70px;
+	border: 2px solid white;
+}
+
+.labelButtonLogar a{
+	font-size: 20px;
+	color: white;
+	padding-top: 20px;
+ }
+ 
+ .labelButtonLogar a:hover{
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+ }
+
+.painel{
+	padding-top: 30px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#header{
+	width: 100%;
+	height: 15%;
+	background-color: black;
+	border-radius: 5px;
+}
+
+.bg-black{
+	background-color: black;
+	color: white;
+	width: inherit;
+	height: 40px;
+}
+
+#labelHeader{
+	color: white;
+	font-size: 18px;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.menu{
+	width: 150px;
+	height: 799px; 
+	background-color: #DCDCDC;
+	float: left;
+	display: none;
+}
+
+.buttonSlide{
+	margin: 30px 30px;
+	padding: 1px 3px;
+	width: 40px;
+	height: 40px;
+	border: 2px solid white;
+	font-size: 30px;
+	color: white;
+}
+
+.buttonSlide:hover{
+	cursor: pointer;
+}
+
+.buttonClose{
+	float: right;
+	margin-right: 10px;
+	margin-top: 10px;
+	color: back;
+}
+
+.buttonClose:hover{
+	color: red;
+}
+
+.headerMenu{
+	padding: 10px 10px;
+	font-weight: bold;
+	font-size: 17px;
+	color: black;
+}
+
+.listaItensMenu{
+	margin-left: -10px;
+	margin-top: 20px;
+	list-style: none;
+	color: black;
+}
+
+.itemMenu:hover{
+	cursor: pointer;
+}
+
+.itemMenu{
+	margin-top: 5px;
+	font-size: 17px;
+}
+
+
+

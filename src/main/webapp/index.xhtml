@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:ui="http://java.sun.com/jsf/facelets" 
+	  xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" 
+	  xmlns:p="http://primefaces.org/ui">
+	<h:head>
+		<h:outputStylesheet library="css" name="estilos.css"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	</h:head>
+	<h:body style="background-image: url('resources/img/fundo1.jpg');">
+			<h:form id="form" prependId="false">
+				<p:growl id="message" showDetail="false" sticky="true"/>
+
+				<div class="buttonLogar" id="buttonLogar">
+					<div class="labelButtonLogar"><a onclick="slideLogin();"> <i class="glyphicon glyphicon-log-in"></i> Faça seu login</a></div>
+				</div>
+				
+				<div class="painelCentral" id="painelCentral">
+					<div id="header">
+						<div id="labelHeader"><i class="glyphicon glyphicon-log-in"></i> Login</div>
+					</div>
+				
+					<div class="painel">
+						<div class="col-lg-12">
+							<p:inputText id="nome" value="#{pessoaController.pessoa.login}" styleClass="form" placeholder="Login" required="true"/>
+						</div>
+						
+						<div class="col-lg-12 m-t-2">
+							<p:inputText id="senha" value="#{pessoaController.pessoa.senha}" type="password" styleClass="form" placeholder="Senha" required="true"/>
+						</div>
+						
+						<div class="col-lg-12 m-t-2">
+							<h:commandButton value="Entrar" action="#{pessoaController.logar()}" 
+								styleClass="bg-black"
+								update="message form"/>
+						</div>
+						
+						<div class="col-lg-12 m-t-2">
+							<p:link value="Esqueci a senha"></p:link>
+						</div>
+						
+					</div>
+				</div>
+			</h:form>			
+	</h:body>
+	<h:outputScript library="js" name="geral.js" />
+	<h:outputScript library="js" name="jquery.min.js" />
+	<h:outputScript library="js" name="jquery.mask.min.js" />
+	<h:outputScript library="js" name="jquery.maskMoney.js" />
+	
+</html>
