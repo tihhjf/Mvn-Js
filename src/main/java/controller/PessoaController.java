@@ -8,8 +8,6 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 
-import org.primefaces.context.RequestContext;
-
 import dao.PessoaDao;
 import entidade.Pessoa;
 
@@ -29,6 +27,7 @@ public class PessoaController implements Serializable{
 		}
 		if(pessoaDao == null){
 			pessoaDao = new PessoaDao();
+			
 		}
 	}
 	

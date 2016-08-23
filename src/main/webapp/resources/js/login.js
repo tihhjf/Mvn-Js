@@ -6,5 +6,6 @@ function slideLogin(){
 	
 	$("#buttonLogar").css("display","none");
 	$("#corpo").css("background-size", "1700px 900px");
-	$("#corpo").css("transition", "5s");
+	$("#corpo").css("transition", "8s");
+
 }

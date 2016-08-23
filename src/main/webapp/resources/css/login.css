@@ -34,15 +34,13 @@
 	margin-top: 300px;
 	padding: 20px 70px;
 	background-color: #FF6347;
-	width: 300px;
-	height: 70px;
-
+	width: 400px;
+	height: 100px;
 }
 
 .labelButtonLogar a{
-	font-size: 20px;
+	font-size: 32px;
 	color: white;
-	padding-top: 20px;
  }
  
  .labelButtonLogar a:hover{
