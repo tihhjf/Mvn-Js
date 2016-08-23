@@ -4,38 +4,16 @@
 	  xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" 
 	  xmlns:p="http://primefaces.org/ui">
 	<h:head>
-		<h:outputStylesheet library="css" name="estilos.css"/>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+		<ui:include src="/head.xhtml" />
 	</h:head>
-	<h:body style="background-image: url('resources/img/fundo1.jpg');">
-	
-		<div class="buttonSlide" id="buttonSlide">
-			<i class="glyphicon glyphicon-menu-hamburger"></i>
-		</div>
-	
-		<div class="menu" id="slideMenu">
-			<div class="buttonClose" id="buttonClose">
-				<i class="glyphicon glyphicon-remove"></i>
-			</div>
-			
-			<div class="headerMenu">Olá, Tiago</div>
-			
-			<div class="ItemsMenu">
-				<ul class="listaItensMenu">
-					<li class="itemMenu"><i class="glyphicon glyphicon-home"></i> Inicial</li>
-					<li class="itemMenu"><i class="glyphicon glyphicon-log-out"></i> Sair</li>
-				</ul>
-			</div>
-		</div>
+	<h:body>
+		
+		Teste
 	
 		<h:form id="form" prependId="false">
 			<p:growl id="message" showDetail="true" sticky="true"/>
 			
-			</h:form>			
+		</h:form>	
+				
 	</h:body>
-	<h:outputScript library="js" name="geral.js" />
-	<h:outputScript library="js" name="jquery.min.js" />
-	<h:outputScript library="js" name="jquery.mask.min.js" />
-	<h:outputScript library="js" name="jquery.maskMoney.js" />
-	
 </html>

@@ -4,8 +4,7 @@
 	  xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" 
 	  xmlns:p="http://primefaces.org/ui">
 	<h:head>
-		<h:outputStylesheet library="css" name="estilos.css"/>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+		<ui:include src="/head.xhtml" />
 	</h:head>
 	<h:body style="background-image: url('resources/img/fundos.jpg');" id="corpo">
 			<h:form id="form" prependId="false">
@@ -32,7 +31,7 @@
 						
 						<div class="col-lg-12 m-t-2">
 							<h:commandButton value="Entrar" action="#{pessoaController.logar()}" 
-								styleClass="bg-black"
+								styleClass="btnEntrar"
 								update="message form"/>
 						</div>
 						
@@ -44,7 +43,7 @@
 				</div>
 			</h:form>			
 	</h:body>
-	<h:outputScript library="js" name="geral.js" />
+	<h:outputScript library="js" name="login.js" />
 	<h:outputScript library="js" name="jquery.min.js" />
 	<h:outputScript library="js" name="jquery.mask.min.js" />
 	<h:outputScript library="js" name="jquery.maskMoney.js" />

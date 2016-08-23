@@ -27,12 +27,3 @@ $(document).ready(function(){
 		
 	});
 });
-
-function slideLogin(){
-		
-	$("#painelCentral").animate({
-	    height: "toggle"
-	}, 500);
-	
-	$("#buttonLogar").css("display","none");
-}
