@@ -5,21 +5,20 @@ import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
-import javax.faces.view.ViewScoped;
 
 import dao.PessoaDao;
 import entidade.Pessoa;
 
 @ManagedBean
 @ViewScoped
-public class PessoaController implements Serializable{
+public class LoginController implements Serializable{
 
-	private static final long serialVersionUID = 1971638693799680582L;
-	
+	private static final long serialVersionUID = -6983839857205389929L;
 	private Pessoa pessoa;
 	private PessoaDao pessoaDao;
-	
+
 	@PostConstruct
 	public void init(){
 		if(pessoa == null){
@@ -42,15 +41,6 @@ public class PessoaController implements Serializable{
 		return null;
 	}
 	
-	public void salvar(){
-		if(pessoaDao.salvar(this.pessoa)){
-			exibirMessagem("Cadastrado com sucesso!", null);
-			this.pessoa = null;
-			return;
-		}
-		exibirMessagem("Erro ao cadastrar!", null);
-	}
-	
 	public void exibirMessagem(String header, String mensagem) {
         FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, header, mensagem);
         FacesContext.getCurrentInstance().addMessage(null, message);
@@ -71,5 +61,6 @@ public class PessoaController implements Serializable{
 	public void setPessoaDao(PessoaDao pessoaDao) {
 		this.pessoaDao = pessoaDao;
 	}
+	
 	
 }

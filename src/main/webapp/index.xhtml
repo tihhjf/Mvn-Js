@@ -22,15 +22,15 @@
 					<div class="painel">
 					
 						<div class="col-lg-12">
-							<p:inputText id="nome" value="#{pessoaController.pessoa.login}" styleClass="form" placeholder="Login" required="true"/>
+							<p:inputText id="nome" value="#{loginController.pessoa.login}" styleClass="form" placeholder="Login" required="true"/>
 						</div>
 						
 						<div class="col-lg-12 m-t-2">
-							<p:inputText id="senha" value="#{pessoaController.pessoa.senha}" type="password" styleClass="form" placeholder="Senha" required="true"/>
+							<p:inputText id="senha" value="#{loginController.pessoa.senha}" type="password" styleClass="form" placeholder="Senha" required="true"/>
 						</div>
 						
 						<div class="col-lg-12 m-t-2">
-							<h:commandButton value="Entrar" action="#{pessoaController.logar()}" 
+							<h:commandButton value="Entrar" action="#{loginController.logar()}" 
 								styleClass="btnEntrar"
 								update="message form"/>
 						</div>

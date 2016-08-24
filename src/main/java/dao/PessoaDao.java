@@ -1,36 +1,32 @@
 package dao;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.NoResultException;
-import javax.persistence.Persistence;
 import javax.persistence.PersistenceException;
 import javax.persistence.Query;
 
 import entidade.Pessoa;
+import helper.JPAHelper;
 
 public class PessoaDao {
 	
-	EntityManagerFactory emf = Persistence.createEntityManagerFactory("estudo-maven");
-	EntityManager manager = emf.createEntityManager();
-	
 	public boolean salvar(Pessoa pessoa){
+		EntityManager manager = JPAHelper.getEntityManager();
 		try{
 			manager.getTransaction().begin();
 			manager.persist(pessoa);
-			manager.close();
 			return true;
 		}catch(PersistenceException ex){
-			manager.close();
 			ex.printStackTrace();
 			return false;
+		}finally {
+			manager.close();
 		}
 	}
 	
 	public Pessoa buscarPorLoginESenha(String login, String senha) throws Exception{
 		Pessoa pessoa = null;
 		String query = "SELECT p FROM Pessoa p WHERE p.login = :login and p.senha = :senha";
-		
+		EntityManager manager = JPAHelper.getEntityManager();
         Query q = manager.createQuery(query);
         q.setParameter("login", login);
         q.setParameter("senha", senha);

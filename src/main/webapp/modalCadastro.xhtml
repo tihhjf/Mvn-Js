@@ -25,14 +25,16 @@
 	   			<div class="col-lg-12 m-t-2">
 	   				<p:inputText styleClass="form" 
 	   					placeholder="Nome Completo"
-	   					value="#{pessoaController.pessoa.nome}"/>
+	   					value="#{cadastroController.pessoa.nome}"
+	   					required="true"/>
 	   			</div>
 
 	   			<div class="col-lg-12 m-t-2">
 	   				<p:inputMask mask="999.999.999-99" 
 	   					styleClass="form" 
 	   					placeholder="CPF"
-	   					value="#{pessoaController.pessoa.cpf}"/>
+	   					value="#{cadastroController.pessoa.cpf}"
+	   					required="true"/>
 	   			</div>
 	   			
 	   			<div class="col-lg-12 m-t-2">
@@ -41,34 +43,31 @@
 	   					pattern="dd/MM/yyyy" 
 	   					placeholder="Nascimento" 
 	   					mask="99/99/9999"
-	   					value="#{pessoaController.pessoa.dataNascimento}"/>
+	   					value="#{cadastroController.pessoa.dataNascimento}"
+	   					required="true"/>
 	   			</div>
 
 	   			<div class="col-lg-12 m-t-2">
 	   				<p:inputText styleClass="form" 
 	   					placeholder="Login"
-	   					value="#{pessoaController.pessoa.login}"/>
+	   					value="#{cadastroController.pessoa.login}"
+	   					required="true"/>
 	   			</div>
 
 	   			<div class="col-lg-12 m-t-2">
 	   				<p:password styleClass="form" 
 	   					placeholder="Senha"
-	   					value="#{pessoaController.pessoa.senha}"/>
+	   					value="#{cadastroController.pessoa.senha}"
+	   					required="true"/>
 	   			</div>
 	   			
 	   			<div class="col-lg-5"></div>
 	   			<div class="col-lg-7 m-t-2" style="margin-bottom: 30px;">
 	   				<p:commandLink onclick="PF('dlg2').hide();" value="Cancelar" />
-	   				<h:commandButton  value="Cadastrar" styleClass="btnCadastrar" action="#{pessoaController.salvar()}"/>
+	   				<h:commandButton  value="Cadastrar" styleClass="btnCadastrar" action="#{cadastroController.salvar()}"/>
 	   			</div>
-	   			
 	   		</div>
-   		
-   			
 		</p:dialog>
-	
 	</div>
-
-	   
 	
 </ui:composition>
