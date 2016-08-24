@@ -42,11 +42,13 @@ public class PessoaController implements Serializable{
 		return null;
 	}
 	
-	public boolean salvar(){
+	public void salvar(){
 		if(pessoaDao.salvar(this.pessoa)){
-			return true;
-		}  
-		return false;
+			exibirMessagem("Cadastrado com sucesso!", null);
+			this.pessoa = null;
+			return;
+		}
+		exibirMessagem("Erro ao cadastrar!", null);
 	}
 	
 	public void exibirMessagem(String header, String mensagem) {

@@ -1,5 +1,6 @@
 #corpo{
 	background-size: 1500px 800px;
+	background-repeat: no-repeat;
 	transition: 5s;
 }
 
@@ -32,7 +33,7 @@
 .buttonLogar{
 	margin:0px auto;
 	margin-top: 300px;
-	padding: 20px 70px;
+	padding: 25px 70px;
 	background-color: #FF6347;
 	width: 400px;
 	height: 100px;

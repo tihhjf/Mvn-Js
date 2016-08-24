@@ -4,8 +4,11 @@
 	  xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" 
 	  xmlns:p="http://primefaces.org/ui">
 	<h:head>
-		<ui:include src="/head.xhtml" />
+		<!-- 	CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+		<h:outputStylesheet library="css" name="principal.css"/>
 	</h:head>
+	
 	<h:body style="background-image: url('resources/img/fundos.jpg');" id="corpo">
 	
 		<h:form id="form" prependId="false">
@@ -26,17 +29,18 @@
 			<div class="corpoPrincipal">
 					
 				<div class="backgroundBotoesPrincipal" id="botao1">
-					<h:commandLink onclick="PF('dlg2').show();"><i class="glyphicon glyphicon-user"></i></h:commandLink>
+					<p:commandLink onclick="PF('dlg2').show();"><i class="glyphicon glyphicon-user"></i></p:commandLink>
 					
 				</div>
 				
 				<div class="backgroundBotoesPrincipal" id="botao2">
-					<h:commandLink ><i class="glyphicon glyphicon-calendar"></i></h:commandLink>
+					<h:commandLink><i class="glyphicon glyphicon-calendar"></i></h:commandLink>
 				</div>
 					
 			</div>
-			
-		</h:form>	
-		<ui:include src="/modalCadastro.xhtml" />		
+			<ui:include src="/modalCadastro.xhtml" />
+			<h:outputScript library="js" name="geral.js" />
+		</h:form>
 	</h:body>
+
 </html>

@@ -4,9 +4,71 @@
 	  xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" 
 	  xmlns:p="http://primefaces.org/ui">
 
+	<div id="modalCadastro">
+		<p:dialog
+			widgetVar="dlg2" 
+			closable="false"
+			modal="true" 
+			width="430" 
+			showEffect="clip" 
+			hideEffect="clip"
+			resizable="false"
+			draggable="false">
+	   		
+	   		<div class="headerModalCadastro">
+	   			
+	   			
+	   		</div>
+	   		
+	   		<div class="corpoModalCadastro">
+	   			
+	   			<div class="col-lg-12 m-t-2">
+	   				<p:inputText styleClass="form" 
+	   					placeholder="Nome Completo"
+	   					value="#{pessoaController.pessoa.nome}"/>
+	   			</div>
 
-	<p:dialog header="Modal Dialog" widgetVar="dlg2" modal="true" height="100">
-    	<h:outputText value="This is a Modal Dialog." />
-	</p:dialog>   
+	   			<div class="col-lg-12 m-t-2">
+	   				<p:inputMask mask="999.999.999-99" 
+	   					styleClass="form" 
+	   					placeholder="CPF"
+	   					value="#{pessoaController.pessoa.cpf}"/>
+	   			</div>
+	   			
+	   			<div class="col-lg-12 m-t-2">
+	   				<p:calendar styleClass="form" 
+	   					locale="pt_BR" 
+	   					pattern="dd/MM/yyyy" 
+	   					placeholder="Nascimento" 
+	   					mask="99/99/9999"
+	   					value="#{pessoaController.pessoa.dataNascimento}"/>
+	   			</div>
+
+	   			<div class="col-lg-12 m-t-2">
+	   				<p:inputText styleClass="form" 
+	   					placeholder="Login"
+	   					value="#{pessoaController.pessoa.login}"/>
+	   			</div>
+
+	   			<div class="col-lg-12 m-t-2">
+	   				<p:password styleClass="form" 
+	   					placeholder="Senha"
+	   					value="#{pessoaController.pessoa.senha}"/>
+	   			</div>
+	   			
+	   			<div class="col-lg-5"></div>
+	   			<div class="col-lg-7 m-t-2" style="margin-bottom: 30px;">
+	   				<p:commandLink onclick="PF('dlg2').hide();" value="Cancelar" />
+	   				<h:commandButton  value="Cadastrar" styleClass="btnCadastrar" action="#{pessoaController.salvar()}"/>
+	   			</div>
+	   			
+	   		</div>
+   		
+   			
+		</p:dialog>
+	
+	</div>
+
+	   
 	
 </ui:composition>
