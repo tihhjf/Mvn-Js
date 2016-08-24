@@ -8,39 +8,41 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 		<h:outputStylesheet library="css" name="principal.css"/>
 	</h:head>
-	
 	<h:body style="background-image: url('resources/img/fundos.jpg');" id="corpo">
-	
-		<h:form id="form" prependId="false">
-			<p:growl id="message" showDetail="true" sticky="true"/>
+		<p:growl id="message" 
+			showDetail="false" 
+			sticky="true" 
+			autoUpdate="true"/>
+		
+		<div class="cabecalhoPrincipal">
+			<div class="labelCabecalhoPrincipal">
+				Olá, Tiago!
+			</div>
 			
-			<div class="cabecalhoPrincipal">
-			
-				<div class="labelCabecalhoPrincipal">
-					Olá, Tiago!
-				</div>
-				
-				<div class="labelSairCabecalhoPrincipal" id="labelSairCabecalhoPrincipal">
-					<h:commandLink ><i class=" glyphicon glyphicon-log-out"></i></h:commandLink>
-				</div>
+			<div class="labelSairCabecalhoPrincipal" id="labelSairCabecalhoPrincipal">
+				<p:commandLink immediate="true" action="index.xhtml?faces-redirect=true">
+					<i class=" glyphicon glyphicon-log-out"></i>
+				</p:commandLink>
+			</div>
+		</div>
+		
+		<div class="corpoPrincipal">
+			<div class="backgroundBotoesPrincipal" id="botao1">
+				<p:commandLink onclick="PF('dlg2').show();" immediate="true">
+					<i class="glyphicon glyphicon-user"></i>
+				</p:commandLink>
 				
 			</div>
 			
-			<div class="corpoPrincipal">
-					
-				<div class="backgroundBotoesPrincipal" id="botao1">
-					<p:commandLink onclick="PF('dlg2').show();"><i class="glyphicon glyphicon-user"></i></p:commandLink>
-					
-				</div>
-				
-				<div class="backgroundBotoesPrincipal" id="botao2">
-					<h:commandLink><i class="glyphicon glyphicon-calendar"></i></h:commandLink>
-				</div>
-					
+			<div class="backgroundBotoesPrincipal" id="botao2">
+				<p:commandLink immediate="true">
+					<i class="glyphicon glyphicon-calendar"></i>
+				</p:commandLink>
 			</div>
-			<ui:include src="/modalCadastro.xhtml" />
-			<h:outputScript library="js" name="geral.js" />
-		</h:form>
+		</div>
+		
+		<ui:include src="/modalCadastro.xhtml" />
+		<h:outputScript library="js" name="geral.js" />
 	</h:body>
 
 </html>

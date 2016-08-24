@@ -5,8 +5,10 @@ import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
-import javax.faces.context.FacesContext;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
+
+import org.primefaces.context.RequestContext;
 
 import dao.PessoaDao;
 import entidade.Pessoa;
@@ -35,9 +37,14 @@ public class CadastroController implements Serializable{
 		if(pessoaDao.salvar(this.pessoa)){
 			exibirMessagem("Cadastrado com sucesso!", null);
 			this.pessoa = new Pessoa();
+			fecharModal();
 			return;
 		}
 		exibirMessagem("Erro ao cadastrar!", null);
+	}
+	
+	public void fecharModal(){
+		RequestContext.getCurrentInstance().execute("PF('dlg2').hide();");
 	}
 	
 	public void exibirMessagem(String header, String mensagem) {
