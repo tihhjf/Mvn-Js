@@ -14,7 +14,7 @@
 }
 
 #corpo{
-	background-size: 1500px 800px;
+	background-size: 100% 200%;
 	background-repeat: no-repeat;
 }
 
@@ -41,12 +41,45 @@
 }
 
 .corpoPrincipal{
-	margin: 50px 500px;
+	margin: 5% 30%;
 }
 
 .corpoPrincipal a{
 	color: white;
 	font-size: 150px;
+}
+
+@media 
+only screen and (max-device-width : 1024px){
+	
+	.corpoPrincipal a{
+		font-size: 100px;
+	}
+	#botao1, #botao2 {
+		width: 150px;
+		height: 150px;
+		border-radius: 15px;
+	}
+}
+
+@media 
+only screen and (min-device-width : 450px),
+only screen and (max-device-width : 700px){
+	
+	#corpo{
+		background-size: 100% 300%;
+		background-repeat: no-repeat;
+	}
+	
+}
+
+@media 
+only screen and (max-device-width : 450px){
+	
+	#corpo{
+		background-size: 100% 500%;
+		background-repeat: no-repeat;
+	}
 }
 
 #botao1 {
