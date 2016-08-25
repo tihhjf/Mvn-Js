@@ -12,6 +12,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.joda.time.DateTime;
+
 @Entity
 @Table(name="pessoa")
 public class Pessoa implements Serializable{
@@ -59,7 +61,23 @@ public class Pessoa implements Serializable{
 	public Date getDataNascimento() {
 		return dataNascimento;
 	}
-
+	
+	public String getDataNascimentoFormatada() {
+		return new DateTime(getDataNascimento()).toString("dd/MM/yyyy");
+	}
+	
+	public int getDiaAniversario() {
+		return new DateTime(getDataNascimento()).getDayOfMonth();
+	}
+	
+	public String getMesAniversario() {
+		return new DateTime(getDataNascimento()).toString("MMMMMMMMM");
+	}
+	
+	public String getDataAniversario(){
+		return getDiaAniversario() + " de " + getMesAniversario();
+	}
+	
 	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}

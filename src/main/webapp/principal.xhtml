@@ -12,7 +12,8 @@
 		<p:growl id="message" 
 			showDetail="false" 
 			sticky="true" 
-			autoUpdate="true"/>
+			autoUpdate="true"
+			/>
 		
 		<div class="cabecalhoPrincipal">
 			<div class="labelCabecalhoPrincipal">
@@ -28,20 +29,22 @@
 		
 		<div class="corpoPrincipal">
 			<div class="backgroundBotoesPrincipal" id="botao1">
-				<p:commandLink onclick="PF('dlg2').show();" immediate="true">
+				<p:commandLink onclick="PF('modalCadastro').show();" immediate="true">
 					<i class="glyphicon glyphicon-user"></i>
 				</p:commandLink>
 				
 			</div>
 			
 			<div class="backgroundBotoesPrincipal" id="botao2">
-				<p:commandLink immediate="true">
+				<p:commandLink onclick="PF('modalConsulta').show();" immediate="true" >
 					<i class="glyphicon glyphicon-calendar"></i>
 				</p:commandLink>
 			</div>
 		</div>
 		
 		<ui:include src="/modalCadastro.xhtml" />
+		<ui:include src="/modalConsulta.xhtml" />
+		<ui:include src="/modalDetalhes.xhtml" />
 		<h:outputScript library="js" name="geral.js" />
 	</h:body>
 

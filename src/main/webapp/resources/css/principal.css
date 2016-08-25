@@ -1,4 +1,5 @@
-.form, .form #j_idt22_input{
+
+.form, .form #inputNascimento_input{
 	width: 100%;
 	border-radius: 0px !important;
 	-webkit-box-shadow: inset 0 0px 0px #8f8f8f !important;
@@ -9,7 +10,7 @@
 	margin-top: 20px;
 }
 
-.form:focus, .form #j_idt22_input:focus{
+.form:focus, .form #inputNascimento_input:focus{
 	border-color: #FF6347;
 }
 
@@ -100,7 +101,7 @@ only screen and (max-device-width : 450px){
 	border-radius: 25px;
 }
 
-#modalCadastro .ui-helper-clearfix{
+#modalCadastro .ui-helper-clearfix, #modalConsulta .ui-helper-clearfix, #modalDetalhes .ui-helper-clearfix{
 	display: none;
 }
 
@@ -113,6 +114,8 @@ only screen and (max-device-width : 450px){
 	height: 35px !important;
 	border: none !important;
 	border-radius: 0px !important;
+	-webkit-box-shadow: inset 0 0px 0px #8f8f8f !important;
+	box-shadow: inset 0 0px 0px #8f8f8f !important;
 }
 
 .ui-datepicker-header{
@@ -120,3 +123,33 @@ only screen and (max-device-width : 450px){
 	color: white !important;
 	font-weight: normal !important;
 }
+
+.corpoModalConsulta th{
+	background: #FF6347 !important;
+	color: white !important;
+	font-weight: normal !important;
+	border: none !important;
+}
+
+.ui-datatable tbody td{
+	border-color: white !important;
+	text-align: center;
+}
+
+.corpoModalConsulta .ui-paginator{
+	background: white !important;
+	border-color: white !important;
+}
+
+.ui-paginator-pages  span{
+	border: none !important;
+	background: #FF6347 !important;
+	color: white !important;
+	font-weight: normal !important;
+}
+
+.headerModalDetalhes{
+	font-size: 50px;
+}
+
+

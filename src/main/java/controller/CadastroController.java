@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
@@ -21,6 +22,7 @@ public class CadastroController implements Serializable{
 	
 	private Pessoa pessoa;
 	private PessoaDao pessoaDao;
+	private List<Pessoa> pessoas;
 	
 	@PostConstruct
 	public void init(){
@@ -29,7 +31,11 @@ public class CadastroController implements Serializable{
 		}
 		if(pessoaDao == null){
 			pessoaDao = new PessoaDao();
-			
+		}
+		try {
+			pessoas = pessoaDao.buscarTodos();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 	
@@ -66,6 +72,14 @@ public class CadastroController implements Serializable{
 
 	public void setPessoaDao(PessoaDao pessoaDao) {
 		this.pessoaDao = pessoaDao;
+	}
+
+	public List<Pessoa> getPessoas() {
+		return pessoas;
+	}
+
+	public void setPessoas(List<Pessoa> pessoas) {
+		this.pessoas = pessoas;
 	}
 	
 }

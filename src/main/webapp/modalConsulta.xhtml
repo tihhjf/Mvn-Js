@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:ui="http://java.sun.com/jsf/facelets" 
+	  xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" 
+	  xmlns:p="http://primefaces.org/ui">
+
+	<div id="modalConsulta">
+		<p:dialog
+			widgetVar="modalConsulta" 
+			closable="false"
+			modal="true" 
+			width="700" 
+			showEffect="clip" 
+			hideEffect="clip"
+			resizable="false"
+			draggable="false">
+	   		
+	   		<h:form id="formConsulta" prependId="false">
+	   		
+	   		<div class="headerModalConsulta">
+	   			
+	   		</div>
+	   		
+	   		<div class="corpoModalConsulta">
+	   		
+	   			<p:dataTable widgetVar="tabelaConsulta"
+	   				emptyMessage="Não há registros!"
+	   				value="#{cadastroController.pessoas}"
+	   				var="pessoa"
+	   				paginator="true" 
+	   				rows="5"
+                 	paginatorPosition="bottom">
+	   				
+	   				<p:column headerText="Nome" >
+	   					<p:outputLabel value="#{pessoa.nome}"/>
+	   				</p:column>
+	   				
+	   				<p:column headerText="Aniversário">
+	   					<p:outputLabel value="#{pessoa.dataAniversario}"/>
+	   				</p:column>
+	   				
+	   				<p:column headerText="Detalhes">
+	   					<p:commandLink onclick="PF('modalConsulta').hide();"
+	   						oncomplete="PF('modalDetalhes').show();">
+	   						<i class="glyphicon glyphicon-list-alt" style="font-size: 25px;"></i>
+	   					</p:commandLink>
+	   				</p:column>
+	   				
+	   			</p:dataTable>
+	   			
+	   			<div class="col-lg-9"></div>
+	   			
+	   			<div class="col-lg-3 m-t-2" 
+	   				style="margin-bottom: 30px;">
+	   				
+	   				<p:commandButton  value="Fechar" 
+	   					styleClass="btnCadastrar" 
+	   					process="formConsulta @this" 
+	   					update="formConsulta" 
+	   					onclick="PF('modalConsulta').hide();"
+	   					immediate="true"/>
+	   			</div>
+	   		</div>
+	   		</h:form>
+		</p:dialog>
+	</div>
+	
+</ui:composition>

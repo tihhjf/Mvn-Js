@@ -1,5 +1,7 @@
 package dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceException;
 import javax.persistence.Query;
@@ -35,5 +37,17 @@ public class PessoaDao {
 		pessoa = (Pessoa) q.getSingleResult();
 		manager.close();
 		return pessoa;
+	}
+	
+	public List<Pessoa> buscarTodos() throws Exception{
+		List<Pessoa> pessoas = null;
+		String query = "SELECT p FROM Pessoa p ";
+		EntityManager manager = JPAHelper.getEntityManager();
+        Query q = manager.createQuery(query);
+	
+		manager.getTransaction().begin();
+		pessoas = (List<Pessoa>) q.getResultList();
+		manager.close();
+		return pessoas;
 	}
 }

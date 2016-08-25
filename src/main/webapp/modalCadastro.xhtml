@@ -6,7 +6,7 @@
 
 	<div id="modalCadastro">
 		<p:dialog
-			widgetVar="dlg2" 
+			widgetVar="modalCadastro" 
 			closable="false"
 			modal="true" 
 			width="430" 
@@ -15,7 +15,7 @@
 			resizable="false"
 			draggable="false">
 	   		
-	   		<h:form id="form" prependId="false">
+	   		<h:form id="formCadastro" prependId="false">
 	   		
 	   		<div class="headerModalCadastro">
 	   			
@@ -23,53 +23,63 @@
 	   		</div>
 	   		
 	   		<div class="corpoModalCadastro">
-	   			
+	   		
 	   			<div class="col-lg-12 m-t-2">
+	   				<p:outputLabel for="inputNome" value="Nome" style="display:none;"/>
 	   				<p:inputText styleClass="form" 
 	   					placeholder="Nome Completo"
 	   					value="#{cadastroController.pessoa.nome}"
-	   					required="true"/>
+	   					required="true"
+	   					id="inputNome"/>
 	   			</div>
 
 	   			<div class="col-lg-12 m-t-2">
+	   				<p:outputLabel for="inputCpf" value="CPF" style="display:none;"/>
 	   				<p:inputMask mask="999.999.999-99" 
 	   					styleClass="form" 
 	   					placeholder="CPF"
 	   					value="#{cadastroController.pessoa.cpf}"
-	   					required="true"/>
+	   					required="true"
+	   					id="inputCpf"/>
 	   			</div>
 	   			
 	   			<div class="col-lg-12 m-t-2">
+	   				<p:outputLabel for="inputNascimento" value="Data Nascimento" style="display:none;"/>
 	   				<p:calendar styleClass="form" 
 	   					locale="pt_BR" 
 	   					pattern="dd/MM/yyyy" 
 	   					placeholder="Nascimento" 
 	   					mask="99/99/9999"
 	   					value="#{cadastroController.pessoa.dataNascimento}"
-	   					required="true"/>
+	   					required="true"
+	   					id="inputNascimento"/>
 	   			</div>
 
 	   			<div class="col-lg-12 m-t-2">
+	   				<p:outputLabel for="inputLogin" value="Login" style="display:none;"/>
 	   				<p:inputText styleClass="form" 
 	   					placeholder="Login"
 	   					value="#{cadastroController.pessoa.login}"
-	   					required="true"/>
+	   					required="true"
+	   					id="inputLogin"/>
 	   			</div>
 
 	   			<div class="col-lg-12 m-t-2">
+	   				<p:outputLabel for="inputSenha" value="Senha" style="display:none;"/>
 	   				<p:password styleClass="form" 
 	   					placeholder="Senha"
 	   					value="#{cadastroController.pessoa.senha}"
-	   					required="true"/>
+	   					required="true"
+	   					id="inputSenha"/>
 	   			</div>
 	   			
 	   			<div class="col-lg-5"></div>
 	   			<div class="col-lg-7 m-t-2" style="margin-bottom: 30px;">
-	   				<p:commandLink onclick="PF('dlg2').hide();" value="Cancelar" immediate="true"/>
+	   				<p:commandLink onclick="PF('modalCadastro').hide();" value="Cancelar" immediate="true"/>
 	   				<p:commandButton  value="Cadastrar" 
 	   					styleClass="btnCadastrar" 
-	   					process="form @this" 
-	   					update="form" 
+	   					process="formCadastro @this" 
+	   					update="formCadastro" 
 	   					action="#{cadastroController.salvar()}"/>
 	   			</div>
 	   		</div>
