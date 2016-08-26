@@ -150,6 +150,21 @@ only screen and (max-device-width : 450px){
 
 .headerModalDetalhes{
 	font-size: 50px;
+	text-align: center;
+}
+
+.ui-growl-item-container div{
+	opacity: 1;
+	background: black;
+	color: white;
+}
+
+#message_container .ui-growl-image{
+	display: none;
+}
+
+#message_container .ui-growl-title{
+	margin-left: -35px;
 }
 
 

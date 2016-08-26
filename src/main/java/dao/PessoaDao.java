@@ -39,6 +39,19 @@ public class PessoaDao {
 		return pessoa;
 	}
 	
+	public Pessoa buscarPorId(Long id) throws Exception{
+		Pessoa pessoa = null;
+		String query = "SELECT p FROM Pessoa p WHERE p.id = :id";
+		EntityManager manager = JPAHelper.getEntityManager();
+        Query q = manager.createQuery(query);
+        q.setParameter("id", id);
+	
+		manager.getTransaction().begin();
+		pessoa = (Pessoa) q.getSingleResult();
+		manager.close();
+		return pessoa;
+	}
+	
 	public List<Pessoa> buscarTodos() throws Exception{
 		List<Pessoa> pessoas = null;
 		String query = "SELECT p FROM Pessoa p ";

@@ -41,7 +41,9 @@
 	   				
 	   				<p:column headerText="Detalhes">
 	   					<p:commandLink onclick="PF('modalConsulta').hide();"
-	   						oncomplete="PF('modalDetalhes').show();">
+	   						oncomplete="PF('modalDetalhes').show();"
+	   						action="#{cadastroController.exibirDetalhes(pessoa)}"
+	   						update="formDetalhes">
 	   						<i class="glyphicon glyphicon-list-alt" style="font-size: 25px;"></i>
 	   					</p:commandLink>
 	   				</p:column>

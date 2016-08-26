@@ -16,16 +16,16 @@
 			draggable="false">
 	   		
 	   		<h:form id="formDetalhes" prependId="false">
-	   		
-	   		<div class="headerModalDetalhes">
-	   			<h:outputLabel><i class="glyphicon glyphicon-gift"></i></h:outputLabel>
-	   			
-	   		</div>
-	   		
-	   		<div class="corpoModalDetalhes">
-	   			
-	   			
-	   		</div>
+		   		<div class="col-lg-12 headerModalDetalhes">
+		   			<p:outputLabel><i class="glyphicon glyphicon-gift"></i></p:outputLabel>
+		   		</div>
+		   		<div class="col-lg-12 headerModalDetalhes">
+		   			<p:outputLabel value="#{cadastroController.pessoaSelecionada.nome}"/>
+		   		</div>
+		   		
+		   		<div class="corpoModalDetalhes">
+		   			
+		   		</div>
 	   		</h:form>
 		</p:dialog>
 	</div>

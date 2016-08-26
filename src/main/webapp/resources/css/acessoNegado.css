@@ -1,0 +1,19 @@
+.labelAcesso{
+	font-size: 30px;
+	text-align: center;
+	margin-top: 10px;
+	color: black;
+}
+
+body{
+	padding-top: 20%;
+}
+
+.labelAcesso button{
+	background: #FF6347;
+	color: white;
+	box-shadow: inset 0px 0px 0px #fff;
+	text-shadow: inset 0px 0px 0px #fff;
+	border: none;
+	font-weight: normal;
+}

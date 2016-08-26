@@ -3,49 +3,50 @@ package controller;
 import java.io.Serializable;
 
 import javax.annotation.PostConstruct;
-import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
-import javax.faces.context.FacesContext;
 
 import dao.PessoaDao;
 import entidade.Pessoa;
+import helper.MessageHelper;
+import helper.SessionHelper;
 
 @ManagedBean
 @ViewScoped
 public class LoginController implements Serializable{
 
+	private static final String ID = "id";
 	private static final long serialVersionUID = -6983839857205389929L;
 	private Pessoa pessoa;
 	private PessoaDao pessoaDao;
 
 	@PostConstruct
 	public void init(){
+		iniciarObjetos();
+	}
+
+	private void iniciarObjetos() {
 		if(pessoa == null){
 			pessoa = new Pessoa();
 		}
 		if(pessoaDao == null){
 			pessoaDao = new PessoaDao();
-			
 		}
 	}
 	
 	public String logar(){
 		try{
-			if(pessoaDao.buscarPorLoginESenha(this.pessoa.getLogin(), this.pessoa.getSenha())!= null){
-				return "principal.xhtml?faces-redirect=true";
+			Pessoa pessoaLogin = pessoaDao.buscarPorLoginESenha(this.pessoa.getLogin(), this.pessoa.getSenha());
+			if(pessoaLogin != null){
+				SessionHelper.login(pessoaLogin);
+				return "principal.xhtml?%s=%d&faces-redirect=true";
 			}
 		}catch(Exception ex){
-			exibirMessagem("Login ou senha inválidos!", null);
+			MessageHelper.exibirMessagem("Login ou senha inválidos!", null);
 		}
 		return null;
 	}
 	
-	public void exibirMessagem(String header, String mensagem) {
-        FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, header, mensagem);
-        FacesContext.getCurrentInstance().addMessage(null, message);
-    }
-
 	public Pessoa getPessoa() {
 		return pessoa;
 	}
@@ -61,6 +62,9 @@ public class LoginController implements Serializable{
 	public void setPessoaDao(PessoaDao pessoaDao) {
 		this.pessoaDao = pessoaDao;
 	}
-	
+
+	public static String getId() {
+		return ID;
+	}
 	
 }

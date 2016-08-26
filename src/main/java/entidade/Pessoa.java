@@ -41,6 +41,26 @@ public class Pessoa implements Serializable{
 	private String senha;
 	
 	public Pessoa(){}
+	
+	public String getDataNascimentoFormatada() {
+		return new DateTime(getDataNascimento()).toString("dd/MM/yyyy");
+	}
+	
+	public int getDiaAniversario() {
+		return new DateTime(getDataNascimento()).getDayOfMonth();
+	}
+	
+	public String getMesAniversario() {
+		return new DateTime(getDataNascimento()).toString("MMMMMMMMM");
+	}
+	
+	public String getDataAniversario(){
+		return getDiaAniversario() + " de " + getMesAniversario();
+	}
+	
+	public String getSaudacao(){
+		return "Olá, " + this.nome;
+	}
 
 	public Long getId() {
 		return id;
@@ -60,22 +80,6 @@ public class Pessoa implements Serializable{
 
 	public Date getDataNascimento() {
 		return dataNascimento;
-	}
-	
-	public String getDataNascimentoFormatada() {
-		return new DateTime(getDataNascimento()).toString("dd/MM/yyyy");
-	}
-	
-	public int getDiaAniversario() {
-		return new DateTime(getDataNascimento()).getDayOfMonth();
-	}
-	
-	public String getMesAniversario() {
-		return new DateTime(getDataNascimento()).toString("MMMMMMMMM");
-	}
-	
-	public String getDataAniversario(){
-		return getDiaAniversario() + " de " + getMesAniversario();
 	}
 	
 	public void setDataNascimento(Date dataNascimento) {

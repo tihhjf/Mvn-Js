@@ -17,11 +17,11 @@
 		
 		<div class="cabecalhoPrincipal">
 			<div class="labelCabecalhoPrincipal">
-				Olá, Tiago!
+				<p:outputLabel value="#{cadastroController.usuarioLogado.saudacao}"/>
 			</div>
 			
 			<div class="labelSairCabecalhoPrincipal" id="labelSairCabecalhoPrincipal">
-				<p:commandLink immediate="true" action="index.xhtml?faces-redirect=true">
+				<p:commandLink immediate="true" action="#{cadastroController.logout()}">
 					<i class=" glyphicon glyphicon-log-out"></i>
 				</p:commandLink>
 			</div>
