@@ -9,21 +9,49 @@
 			widgetVar="modalDetalhes" 
 			closable="false"
 			modal="true" 
-			width="430" 
+			width="730" 
 			showEffect="clip" 
 			hideEffect="clip"
 			resizable="false"
 			draggable="false">
 	   		
 	   		<h:form id="formDetalhes" prependId="false">
-		   		<div class="col-lg-12 headerModalDetalhes">
-		   			<p:outputLabel><i class="glyphicon glyphicon-gift"></i></p:outputLabel>
-		   		</div>
-		   		<div class="col-lg-12 headerModalDetalhes">
-		   			<p:outputLabel value="#{cadastroController.pessoaSelecionada.nome}"/>
+		   		<div class="headerModalDetalhes">
+			   		<div class="col-lg-12">
+			   			<p:outputLabel><i class="glyphicon glyphicon-gift"></i></p:outputLabel>
+			   		</div>
+		   			<div class="col-lg-12">
+			   			<p:outputLabel value="#{cadastroController.pessoaSelecionada.nome}"/>
+			   		</div>
 		   		</div>
 		   		
 		   		<div class="corpoModalDetalhes">
+		   			<div class="col-lg-12 m-t-1">
+			   			<p:outputLabel><i class="glyphicon glyphicon-user"></i> Nome: #{cadastroController.pessoaSelecionada.nome}</p:outputLabel>
+			   		</div>
+		   			<div class="col-lg-12 m-t-1">
+		   				<p:outputLabel><i class="glyphicon glyphicon-calendar"></i> Nascimento: #{cadastroController.pessoaSelecionada.dataNascimentoFormatada}</p:outputLabel>
+			   		</div>
+			   		<div class="col-lg-12 m-t-1">
+		   				<p:outputLabel><i class="glyphicon glyphicon-list-alt"></i> CPF: #{cadastroController.pessoaSelecionada.cpf}</p:outputLabel>
+			   		</div>
+			   		<div class="col-lg-12 m-t-1">
+		   				<p:outputLabel><i class="glyphicon glyphicon-phone-alt"></i> Telefone: #{cadastroController.pessoaSelecionada.telefone}</p:outputLabel>
+			   		</div>
+			   		<div class="col-lg-12 m-t-1">
+		   				<p:outputLabel><i class="glyphicon glyphicon-phone"></i> Celular: #{cadastroController.pessoaSelecionada.celular}</p:outputLabel>
+			   		</div>
+			   		<div class="col-lg-12 m-t-1">
+		   				<p:outputLabel><i class="glyphicon glyphicon-log-in"></i> Login: #{cadastroController.pessoaSelecionada.login}</p:outputLabel>
+			   		</div>
+		   		</div>
+		   		<div class="rodapeModalDetalhes">
+		   			<div class="col-lg-9"></div>
+	   				<div class="col-lg-3 m-t-2" style="margin-bottom: 30px;">
+		   				<p:commandButton  value="Voltar" 
+		   					styleClass="btnCadastrar" 
+		   					onclick="PF('modalDetalhes').hide();PF('modalConsulta').show();"/>
+	   			</div>
 		   			
 		   		</div>
 	   		</h:form>

@@ -37,6 +37,12 @@ public class Pessoa implements Serializable{
 	@Column(name="login", length=45, nullable=false)
 	private String login;
 	
+	@Column(name="tel", length=45, nullable=false)
+	private String telefone;
+	
+	@Column(name="cel", length=45, nullable=false)
+	private String celular;
+	
 	@Column(name="senha", length=45, nullable=false)
 	private String senha;
 	
@@ -108,6 +114,22 @@ public class Pessoa implements Serializable{
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public String getCelular() {
+		return celular;
+	}
+
+	public void setCelular(String celular) {
+		this.celular = celular;
 	}
 
 	@Override

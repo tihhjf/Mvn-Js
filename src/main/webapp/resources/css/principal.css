@@ -10,6 +10,10 @@
 	margin-top: 20px;
 }
 
+.m-t-1{
+	margin-top: 10px;
+}
+
 .form:focus, .form #inputNascimento_input:focus{
 	border-color: #FF6347;
 }
@@ -28,7 +32,7 @@
 
 .labelCabecalhoPrincipal{
 	color: white;
-	font-size: 50px;
+	font-size: 40px;
 	float: left;
 }
 
@@ -151,6 +155,7 @@ only screen and (max-device-width : 450px){
 .headerModalDetalhes{
 	font-size: 50px;
 	text-align: center;
+	color: #FF6347;
 }
 
 .ui-growl-item-container div{
@@ -165,6 +170,14 @@ only screen and (max-device-width : 450px){
 
 #message_container .ui-growl-title{
 	margin-left: -35px;
+}
+
+.corpoModalDetalhes{
+	font-size: 20px;
+}
+
+.rodapeModalDetalhes{
+	
 }
 
 

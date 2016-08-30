@@ -54,6 +54,26 @@
 	   					required="true"
 	   					id="inputNascimento"/>
 	   			</div>
+	   			
+	   			<div class="col-lg-12 m-t-2">
+	   				<p:outputLabel for="inputTel" value="Telefone" style="display:none;"/>
+	   				<p:inputMask mask="(99)9999-9999" 
+	   					styleClass="form" 
+	   					placeholder="Telefone"
+	   					value="#{cadastroController.pessoa.telefone}"
+	   					required="true"
+	   					id="inputTel"/>
+	   			</div>
+	   			
+	   			<div class="col-lg-12 m-t-2">
+	   				<p:outputLabel for="inputCel" value="Celular" style="display:none;"/>
+	   				<p:inputMask mask="(99)99999-9999" 
+	   					styleClass="form" 
+	   					placeholder="Celular"
+	   					value="#{cadastroController.pessoa.celular}"
+	   					required="true"
+	   					id="inputCel"/>
+	   			</div>
 
 	   			<div class="col-lg-12 m-t-2">
 	   				<p:outputLabel for="inputLogin" value="Login" style="display:none;"/>
